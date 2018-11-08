@@ -1,4 +1,4 @@
-package com.petclinic.paritoshpetclinic;
+package paritoshpetclinic;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
