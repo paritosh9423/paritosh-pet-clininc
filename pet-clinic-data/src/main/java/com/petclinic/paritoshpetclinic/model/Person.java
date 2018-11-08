@@ -1,7 +1,7 @@
 package com.petclinic.paritoshpetclinic.model;
 //Created by ppradeep on 08/11/18, 2:15 PM
 
-public class Person {
+public class Person extends BaseEntity{
 
     private String firstName;
     private String lastName;
