@@ -4,9 +4,10 @@ package com.petclinic.paritoshpetclinic.services.map;
 import com.petclinic.paritoshpetclinic.model.Pet;
 import com.petclinic.paritoshpetclinic.services.CrudService;
 import com.petclinic.paritoshpetclinic.services.PetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
-
+@Service
 public class PetServiceMap extends AbstractMapService<Pet , Long> implements PetService {
 
 

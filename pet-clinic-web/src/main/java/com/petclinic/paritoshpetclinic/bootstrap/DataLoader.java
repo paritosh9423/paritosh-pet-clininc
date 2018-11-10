@@ -7,6 +7,7 @@ import com.petclinic.paritoshpetclinic.services.OwnerService;
 import com.petclinic.paritoshpetclinic.services.VetService;
 import com.petclinic.paritoshpetclinic.services.map.OwnerServiceMap;
 import com.petclinic.paritoshpetclinic.services.map.VetServiceMap;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -16,13 +17,14 @@ public class DataLoader implements CommandLineRunner {
     private  final OwnerService ownerService;
     private final VetService vetService;
 
-    public DataLoader() {
+    @Autowired//Not required to write autowired in constructor injectin n spring 5 but is preferred to write for understanding purpose.
+    public DataLoader(OwnerService ownerService, VetService vetService) {
 
-        ownerService = new OwnerServiceMap();
-        vetService = new VetServiceMap();
 
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
-
+    
     @Override
     public void run(String... args) throws Exception {
         System.out.println("Start Loading Owners");
