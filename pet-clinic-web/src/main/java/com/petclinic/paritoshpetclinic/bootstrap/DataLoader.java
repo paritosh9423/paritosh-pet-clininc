@@ -24,7 +24,7 @@ public class DataLoader implements CommandLineRunner {
         this.ownerService = ownerService;
         this.vetService = vetService;
     }
-    
+
     @Override
     public void run(String... args) throws Exception {
         System.out.println("Start Loading Owners");
@@ -37,9 +37,9 @@ public class DataLoader implements CommandLineRunner {
         ownerService.save(o1);
 
         Owner o2 = new Owner();
-        o1.setId(2L);
-        o1.setFirstName("AKASH");
-        o1.setLastName("VERMA");
+        o2.setId(2L);
+        o2.setFirstName("AKASH");
+        o2.setLastName("VERMA");
 
         ownerService.save(o2);
 
