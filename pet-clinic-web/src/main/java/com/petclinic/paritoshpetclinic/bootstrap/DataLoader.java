@@ -2,6 +2,7 @@ package com.petclinic.paritoshpetclinic.bootstrap;
 //Created by ppradeep on 10/11/18, 1:14 PM
 
 import com.petclinic.paritoshpetclinic.model.Owner;
+import com.petclinic.paritoshpetclinic.model.Pet;
 import com.petclinic.paritoshpetclinic.model.PetType;
 import com.petclinic.paritoshpetclinic.model.Vet;
 import com.petclinic.paritoshpetclinic.services.OwnerService;
@@ -12,6 +13,8 @@ import com.petclinic.paritoshpetclinic.services.map.VetServiceMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -47,6 +50,17 @@ public class DataLoader implements CommandLineRunner {
       //  o1.setId(1L);
         o1.setFirstName("PARITOSH");
         o1.setLastName("PRADEEP");
+        o1.setAddress("1234,Electronic City");
+        o1.setCity("Bangalore");
+        o1.setTelephone("1234567890");
+
+        Pet pet_1 = new Pet();
+        pet_1.setPetType(savedDogPetType);
+        pet_1.setOwner(o1);
+        pet_1.setBirthDate(LocalDate.now());
+        pet_1.setPetName("Jackie");
+
+        o1.getPetsSet().add(pet_1);
 
         ownerService.save(o1);
 
@@ -54,6 +68,18 @@ public class DataLoader implements CommandLineRunner {
       // o2.setId(2L);
         o2.setFirstName("AKASH");
         o2.setLastName("VERMA");
+
+        o2.setAddress("1234,Electronic City");
+        o2.setCity("Bangalore");
+        o2.setTelephone("1234567890");
+
+        Pet pet_2 = new Pet();
+        pet_2.setPetType(savedCatPetType);
+        pet_2.setOwner(o2);
+        pet_2.setBirthDate(LocalDate.now());
+        pet_2.setPetName("SmellyCat");
+
+        o2.getPetsSet().add(pet_2);
 
         ownerService.save(o2);
 
