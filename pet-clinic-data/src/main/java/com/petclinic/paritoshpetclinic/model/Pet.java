@@ -1,11 +1,10 @@
 package com.petclinic.paritoshpetclinic.model;
 //Created by ppradeep on 08/11/18, 2:20 PM
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name="pets")
@@ -20,6 +19,16 @@ public class Pet extends BaseEntity {
     @JoinColumn(name = "owner_id")
     private Owner owner;
     private LocalDate birthDate;
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "pet")
+    private Set<Visit> visitSet = new HashSet<>();
+
+    public Set<Visit> getVisitSet() {
+        return visitSet;
+    }
+
+    public void setVisitSet(Set<Visit> visitSet) {
+        this.visitSet = visitSet;
+    }
 
     public String getPetName() {
         return petName;
