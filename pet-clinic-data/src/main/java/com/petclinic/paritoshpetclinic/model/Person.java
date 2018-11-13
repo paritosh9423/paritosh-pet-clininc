@@ -1,9 +1,14 @@
 package com.petclinic.paritoshpetclinic.model;
+
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
+
 //Created by ppradeep on 08/11/18, 2:15 PM
-
+@MappedSuperclass
 public class Person extends BaseEntity{
-
+    @Column(name = "first_name")
     private String firstName;
+    @Column(name = "last_name")
     private String lastName;
 
     public String getFirstName() {

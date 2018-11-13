@@ -1,6 +1,11 @@
 package com.petclinic.paritoshpetclinic.model;
-//Created by ppradeep on 08/11/18, 2:20 PM
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+//Created by ppradeep on 08/11/18, 2:20 PM
+@Entity
+@Table(name="types")
 public class PetType extends BaseEntity{
 
     private String name;
