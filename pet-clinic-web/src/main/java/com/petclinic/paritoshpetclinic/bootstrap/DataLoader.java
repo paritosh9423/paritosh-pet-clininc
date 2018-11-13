@@ -86,12 +86,12 @@ public class DataLoader implements CommandLineRunner {
         Owner o2 = new Owner();
         // o2.setId(2L);
         //Changing to o1.set* to clear a confusion on save
-        o1.setFirstName("AKASH");
-        o1.setLastName("VERMA");
+        o2.setFirstName("AKASH");
+        o2.setLastName("VERMA");
 
-        o1.setAddress("1234,Electronic City");
-        o1.setCity("Bangalore");
-        o1.setTelephone("1234567890");
+        o2.setAddress("1234,Electronic City");
+        o2.setCity("Bangalore");
+        o2.setTelephone("1234567890");
 
         Pet pet_2 = new Pet();
         pet_2.setPetType(savedCatPetType);
