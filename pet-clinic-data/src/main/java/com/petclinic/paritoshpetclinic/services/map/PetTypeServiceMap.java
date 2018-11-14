@@ -3,11 +3,13 @@ package com.petclinic.paritoshpetclinic.services.map;
 
 import com.petclinic.paritoshpetclinic.model.PetType;
 import com.petclinic.paritoshpetclinic.services.PetTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
-import sun.lwawt.LWWindowPeer;
+
 
 import java.util.Set;
 @Service
+@Profile({"default","map"})
 public class PetTypeServiceMap extends AbstractMapService<PetType,Long> implements PetTypeService {
 
 
