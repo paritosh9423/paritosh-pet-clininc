@@ -2,10 +2,7 @@ package com.petclinic.paritoshpetclinic.bootstrap;
 //Created by ppradeep on 10/11/18, 1:14 PM
 
 import com.petclinic.paritoshpetclinic.model.*;
-import com.petclinic.paritoshpetclinic.services.OwnerService;
-import com.petclinic.paritoshpetclinic.services.PetTypeService;
-import com.petclinic.paritoshpetclinic.services.SpecialitiesService;
-import com.petclinic.paritoshpetclinic.services.VetService;
+import com.petclinic.paritoshpetclinic.services.*;
 import com.petclinic.paritoshpetclinic.services.map.OwnerServiceMap;
 import com.petclinic.paritoshpetclinic.services.map.VetServiceMap;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,15 +18,19 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialitiesService specialitiesService;
+    private final VisitService visitService;
 
     @Autowired//Not required to write autowired in constructor injectin n spring 5 but is preferred to write for understanding purpose.
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialitiesService specialitiesService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService,
+                      SpecialitiesService specialitiesService,VisitService visitService) {
 
 
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialitiesService = specialitiesService;
+        this.visitService = visitService;
+
     }
 
     @Override
@@ -47,7 +48,8 @@ public class DataLoader implements CommandLineRunner {
 
         PetType cat = new PetType();
         cat.setName("Cat");
-        PetType savedCatPetType = petTypeService.save(dog);
+        PetType savedCatPetType = petTypeService.save(cat);
+
 
         Speciality radiology = new Speciality();
         radiology.setDescription("Radiology");
@@ -99,12 +101,19 @@ public class DataLoader implements CommandLineRunner {
         pet_2.setBirthDate(LocalDate.now());
         pet_2.setPetName("SmellyCat");
 
-        o1.getPetsSet().add(pet_2);
+        o2.getPetsSet().add(pet_2);
 
         ownerService.save(o2);
 
         System.out.println("Owners Loaded");
         System.out.println("Start Loading Vets");
+
+        Visit catVisit  = new Visit();
+        catVisit.setPet(pet_2);
+        catVisit.setDate(LocalDate.now());
+        catVisit.setDescription("Smelly cat visit");
+        System.out.println((catVisit.getPet() == null) +" " +(catVisit.getPet().getOwner()==null)+" "+(catVisit.getPet().getId()==null)+" "+(catVisit.getPet().getOwner().getId()==null));
+        visitService.save(catVisit);
 
         Vet v1 = new Vet();
         //v1.setId(1L);

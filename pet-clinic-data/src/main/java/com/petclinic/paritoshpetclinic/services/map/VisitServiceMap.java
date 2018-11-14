@@ -3,9 +3,10 @@ package com.petclinic.paritoshpetclinic.services.map;
 
 import com.petclinic.paritoshpetclinic.model.Visit;
 import com.petclinic.paritoshpetclinic.services.VisitService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
-
+@Service
 public class VisitServiceMap extends AbstractMapService<Visit,Long> implements VisitService {
 
     @Override
