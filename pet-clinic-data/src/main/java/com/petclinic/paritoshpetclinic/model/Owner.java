@@ -11,8 +11,8 @@ import java.util.HashSet;
 import java.util.Set;
 @Setter
 @Getter
-@NoArgsConstructor
 @Builder
+@AllArgsConstructor
 @Entity
 @Table(name="owners")
 public class Owner extends Person {
@@ -27,7 +27,9 @@ public class Owner extends Person {
         this.petsSet = petsSet;
 
     }
+public Owner(){
 
+}
     private String address;
     private String city;
     private String telephone;
