@@ -1,11 +1,17 @@
 package com.petclinic.paritoshpetclinic.model;
 //Created by ppradeep on 08/11/18, 2:20 PM
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
-
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name="pets")
 public class Pet extends BaseEntity {
@@ -22,42 +28,4 @@ public class Pet extends BaseEntity {
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "pet")
     private Set<Visit> visitSet = new HashSet<>();
 
-    public Set<Visit> getVisitSet() {
-        return visitSet;
-    }
-
-    public void setVisitSet(Set<Visit> visitSet) {
-        this.visitSet = visitSet;
-    }
-
-    public String getPetName() {
-        return petName;
-    }
-
-    public void setPetName(String petName) {
-        this.petName = petName;
-    }
-    public PetType getPetType() {
-        return petType;
-    }
-
-    public void setPetType(PetType petType) {
-        this.petType = petType;
-    }
-
-    public Owner getOwner() {
-        return owner;
-    }
-
-    public void setOwner(Owner owner) {
-        this.owner = owner;
-    }
-
-    public LocalDate getBirthDate() {
-        return birthDate;
-    }
-
-    public void setBirthDate(LocalDate birthDate) {
-        this.birthDate = birthDate;
-    }
 }
