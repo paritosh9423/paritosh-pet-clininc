@@ -11,6 +11,7 @@ import java.util.HashSet;
 import java.util.Set;
 @Setter
 @Getter
+@NoArgsConstructor
 @Entity
 @Table(name="owners")
 public class Owner extends Person {
