@@ -1,3 +1,4 @@
-# paritosh-pet-clininc
-CID 001 - Added basic pojos . . Closes Issue #
-CID-002 -Refactoring to MultiModule web project.  Closes #1 .
+
+
+[![CircleCI](https://circleci.com/gh/paritosh9423/paritosh-pet-clininc.svg?style=svg)](https://circleci.com/gh/paritosh9423/paritosh-pet-clininc)
+# Paritosh Pet Clinic

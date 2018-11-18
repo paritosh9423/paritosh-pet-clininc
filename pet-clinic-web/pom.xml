@@ -133,9 +133,6 @@
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.0</version>
-                <configuration>
-                    <forkCount>1</forkCount>
-                </configuration>
                 <dependencies>
                     <!-- https://mvnrepository.com/artifact/org.junit.platform/junit-platform-surefire-provider -->
                     <dependency>
@@ -147,6 +144,7 @@
                 </dependencies>
                 </plugin>
         </plugins>
+
     </build>
 
 </project>
