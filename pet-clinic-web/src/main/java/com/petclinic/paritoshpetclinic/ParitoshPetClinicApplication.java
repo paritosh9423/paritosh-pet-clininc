@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ParitoshPetClinicApplication {
 
     public static void main(String[] args) {
+    	
         SpringApplication.run(ParitoshPetClinicApplication.class, args);
     }
 }
